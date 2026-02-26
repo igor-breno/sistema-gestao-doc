@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^ver/(.*)$ categoria.php?fullPath=$1 [QSA,L]
+RewriteRule ^navegar/(.*)$ navegacao.php?path=$1 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]
